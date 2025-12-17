@@ -23,12 +23,14 @@ public class StudentController{
     }
     @GetMapping("/getAll")
     public Map<Integer,StudentEntity> getAllStudents(){
-        return ser.getAllStudents()''
+        return ser.getAllStudents();
     }
     @GetMapping("/Getadd/{id}")
     public StudentEntity get(@PathVariable int id){
         return ser.getStudent(id);
     }
     @PutMapping("/update/{id}")
-    
+    public StudentEntity update(@PathVariable int id,@RequestBody StudentEntity st){
+        return ser.updateStudent(id,st);
+    }
 }
