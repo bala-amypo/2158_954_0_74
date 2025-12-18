@@ -1,0 +1,17 @@
+package com.example.demo.exception;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public String handleNotFound(ResourceNotFoundException ex) {
+        return ex.getMessage();
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public String handleIllegal(IllegalArgumentException ex) {
+        return ex.getMessage();
+    }
+}
